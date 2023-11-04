@@ -1,8 +1,8 @@
 # auto-ls
 
-zsh plugin to automatically `ls` trying to use [exa](https://the.exa.website/) or [colorls](https://github.com/athityakumar/colorls) on `cd`. If both of them not found, the default `ls` would be used.
+zsh plugin to automatically ls by firstly trying to use [exa](https://the.exa.website/) or [colorls](https://github.com/athityakumar/colorls) commands on `cd`. If both of them are not found, the default `ls` command would be used.
 
-## installation
+## Installation
 
 - colorls
 
@@ -17,18 +17,24 @@ brew install exa
 
 - Plugin
 
-```bash
+```sh
 ### antigen
-antigen bundle gretzky/auto-color-ls
+antigen bundle gretzky/auto-ls
 
 ### zplugin
-zplugin load gretzky/auto-color-ls
+zplugin load gretzky/auto-ls
 
 ### zgen
-zgen load gretzky/auto-color-ls
+zgen load gretzky/auto-ls
 
 ### ohmyzsh
 git clone https://github.com/vqcuong/auto-ls $ZSH_CUSTOM/plugins/auto-ls
 
 # Finally, add `auto-ls` to `plugins=()` in your `.zshrc`
+```
+
+## Environment
+- By default, the plugin will not list hidden files and folders. To expose all objects, you must set this enviroment variable to your .zshrc file
+```sh
+echo 'export ZSH_AUTO_LS_LIST_ALL=true' >> ~/.zshrc
 ```
