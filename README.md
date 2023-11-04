@@ -1,40 +1,34 @@
-# auto-color-ls
+# auto-ls
 
-zsh plugin to automatically `ls` using [colorls](https://github.com/athityakumar/colorls) on `cd`
+zsh plugin to automatically `ls` trying to use [exa](https://the.exa.website/) or [colorls](https://github.com/athityakumar/colorls) on `cd`. If both of them not found, the default `ls` would be used.
 
 ## installation
 
-### prerequisites
-
 - colorls
 
-```bash
+```sh
 gem install colorls
 ```
 
-### antigen
+- exa
+```sh
+brew install exa
+```
+
+- Plugin
 
 ```bash
+### antigen
 antigen bundle gretzky/auto-color-ls
-```
 
 ### zplugin
-
-```bash
 zplugin load gretzky/auto-color-ls
-```
 
 ### zgen
-
-```bash
 zgen load gretzky/auto-color-ls
+
+### ohmyzsh
+git clone https://github.com/vqcuong/auto-ls $ZSH_CUSTOM/plugins/auto-ls
+
+# Finally, add `auto-ls` to `plugins=()` in your `.zshrc`
 ```
-
-### oh-my-zsh
-
-Run
-```bash
-( cd $ZSH_CUSTOM/plugins && git clone https://github.com/gretzky/auto-color-ls )
-```
-
-Then add `auto-color-ls` to `plugins=()` in your `.zshrc`
